@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +40,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+div.command-list {
+	color: white;
+	padding-left: 10px;
+	font-size: calc(4px + 2vmin);
+	max-width: 550px;
+}
+
+div.command-list ul {
+	text-align: left;
+}
+
+button.options-button {
+	padding: 0.5rem;
+	border-radius: 12.5px;
+	border: 1px solid #2e0219;
+	margin: 3px;
+	color: white;
+	background-color: #6a0f49;
 }

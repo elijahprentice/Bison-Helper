@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
+import React from 'react';
+import Chatbot from 'react-chatbot-kit';
+import 'react-chatbot-kit/build/main.css';
+
+import ActionProvider from './ActionProvider.js';
+import MessageParser from './MessageParser.js';
+import config from './config.js';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	return (
+		<div className="App">
+			<div style={{ maxWidth: "400px" }}>
+				<Chatbot 
+				config={config}
+	  			actionProvider={ActionProvider}
+	  			messageParser={MessageParser}
+				/>
+			</div>
+			<div className="command-list">
+				<p>
+					A list of commands to send Bison Helper using the chat. Try them out!
+					<ul>
+						<li>'FAQ' to display Frequently Asked Questions.</li>
+						<li>'Important Dates' for upcoming dates such as registration deadlines or holiday closures.</li>
+						<li>'Updates' for any important campus updates such as Calls to Chapel and new COVID regulations.</li>
+						<li>'Locate' [insert Howard building] to help you find any place on campus.</li>
+					</ul>
+					You can also ask questions in the chat.
+				</p>
+			</div>
+		</div>
   );
 }
 
