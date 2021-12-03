@@ -80,25 +80,27 @@ class MessageParser {
 
 		const lowerCaseMessage = message.toLowerCase();
 
-		if (lowerCaseMessage.includes('faq')) {
-			this.actionProvider.displayFAQ();
-		} else if (lowerCaseMessage.includes('important dates')) {
-			this.actionProvider.importantDates();
-		} else if (lowerCaseMessage.includes('updates')) {
-			this.actionProvider.campusUpdates();
-		} else if (lowerCaseMessage.includes('locate')) {
-			this.actionProvider.locateHoward('Admin');
-		} else {
-			let idx = 1000;
-			let leven_dist = 1000;
-			for (var i = 0; i < questions.length; ++i) {
-				let new_leven = wagner(lowerCaseMessage,questions[i]);
-				if (new_leven < leven_dist) {
-					leven_dist = new_leven;
-					idx = i;
+		if (lowerCaseMessage.length > 0) {
+			if (lowerCaseMessage.includes('faq')) {
+				this.actionProvider.displayFAQ();
+			} else if (lowerCaseMessage.includes('important dates')) {
+				this.actionProvider.importantDates();
+			} else if (lowerCaseMessage.includes('updates')) {
+				this.actionProvider.campusUpdates();
+			} else if (lowerCaseMessage.includes('locate')) {
+				this.actionProvider.locateHoward('Admin');
+			} else {
+				let idx = 1000;
+				let leven_dist = 1000;
+				for (var i = 0; i < questions.length; ++i) {
+					let new_leven = wagner(lowerCaseMessage,questions[i]);
+					if (new_leven < leven_dist) {
+						leven_dist = new_leven;
+						idx = i;
+					}
 				}
+				this.actionProvider.askingQuestions(questions[idx],answers[idx]);
 			}
-			this.actionProvider.askingQuestions(questions[idx],answers[idx]);
 		}
 	}
 }

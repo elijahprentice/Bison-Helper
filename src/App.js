@@ -26,7 +26,6 @@ function App() {
 						<li>'FAQ' to display Frequently Asked Questions.</li>
 						<li>'Important Dates' for upcoming dates such as registration deadlines or holiday closures.</li>
 						<li>'Updates' for any important campus updates such as Calls to Chapel and new COVID regulations.</li>
-						<li>'Locate' [insert Howard building] to help you find any place on campus.</li>
 					</ul>
 					You can also ask questions in the chat.
 				</p>

@@ -56,8 +56,30 @@ div.command-list ul {
 button.options-button {
 	padding: 0.5rem;
 	border-radius: 12.5px;
-	border: 1px solid #2e0219;
+	border: 3px solid #003a63;
 	margin: 3px;
 	color: white;
-	background-color: #6a0f49;
+	background-color: #2a6ebb;
+}
+
+div.react-chatbot-kit-chat-bot-message {
+	background-color: #003a63 !important;
+}
+
+div.react-chatbot-kit-chat-bot-message-arrow {
+	border-right-color: #003a63 !important;
+}
+
+button.react-chatbot-kit-chat-btn-send {
+	background-color: #003a63 !important;
+}
+
+div.react-chatbot-kit-user-avatar-container {
+	background-color: #003a63 !important;
+	border: 3px solid #e51937;
+}
+
+div.react-chatbot-kit-chat-bot-avatar-container {
+	color: #5f6062;
+	border: 3px solid #003a63;
 }
